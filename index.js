@@ -36,7 +36,7 @@ app.use("/api/docs", swaggerUI.serve, swaggerUI.setup( swaggerJSDoc({
         },
         servers: [
             {
-                url: "https://09-rest-mean-five.vercel.app/",
+                url: "https://backend-tasks-jet.vercel.app/",
             }
         ],
     },
