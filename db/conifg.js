@@ -11,7 +11,8 @@ const conexionDB = async () => {
     console.log("Conectado a DB")
 
     } catch (error) {
-        console.log("Error al conectar")
+        console.log("Error al conectar", error)
+        
     }
 
     

@@ -42,7 +42,7 @@ const registerUsuario = async (req, res) => {
        
 
     } catch (error) {
-       response.json({
+       res.json({
         ok: false,
         msg: "Error al registrarse"
        });
@@ -91,7 +91,7 @@ const loginUsuario = async (req, res) => {
         
     } 
     catch (error) {
-      response.json({
+      res.json({
         ok: false,
         msg: "Error al registrarse"
         });

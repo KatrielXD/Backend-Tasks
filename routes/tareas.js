@@ -6,6 +6,8 @@ const validationErrors = require("../middlewares/validationErrors");
 
 const router = Router();
 
+router.get("/read", [ verifyToken], readTarea);
+
 router.post("/create", [
     check("nombre", "Nombre del Proyecto obligatorio").not().isEmpty(),
     validationErrors,
@@ -13,7 +15,7 @@ router.post("/create", [
     ],
     createTarea);
 
-router.get("/read", [ verifyToken], readTarea);
+
 
 router.put("/update/:id", [
     check("nombre", "Nombre del Proyecto obligatorio").not().isEmpty(),
