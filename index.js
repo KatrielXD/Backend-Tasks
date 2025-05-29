@@ -19,12 +19,7 @@ require("dotenv").config();
 conexionDB();
 
 app.use(express.json());
-const corsOptions = {
-    origin: 'http://localhost:4200',  // Permite solicitudes de este origen
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-  };
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use( "/", express.static(__dirname + "/public") );
 app.use("/api/docs", swaggerUI.serve, swaggerUI.setup( swaggerJSDoc({
@@ -36,7 +31,7 @@ app.use("/api/docs", swaggerUI.serve, swaggerUI.setup( swaggerJSDoc({
         },
         servers: [
             {
-                url: "https://backend-tasks-jet.vercel.app/",
+                url: "http://localhost:3000",
             }
         ],
     },
